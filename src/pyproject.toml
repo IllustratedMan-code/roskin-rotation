@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metafetch"
+version = "0.0.1"
+dependencies = [
+    "requests",
+    "rich-click",
+    "pandas",
+    "matplotlib"
+]
+
+[project.scripts]
+irmetafetch = "metafetch:cli"

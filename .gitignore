@@ -1,0 +1,7 @@
+/.direnv
+**/__pycache__/
+/.vscode
+/*.tsv
+/*.json
+/*.csv
+/data
