@@ -1,4 +1,10 @@
-## immcantation
+## Basic usage
+
+List all available commands
+
+```bash
+make help
+```
 
 ## methods
 
@@ -7,6 +13,14 @@ The metafetch python package is stored in `src` and can be used to interact with
 Metadata was downloaded from ireceptor gateway using the "human" and "IGH" filters.
 
 `ireceptor-number-of-subjects.py` counts the number of subjects for each experiment and sorts them from largest to smallest.
+
+## immcantation methods
+
+[detailed instructions here](./docs/immcantation.md)
+
+Current method for using the immcantation is to use the docker container. I plan on making a functional flake for it as well, but may need to examine the docker image to get full dependency list.
+
+The dockerfile itself isn't very helpful. I think they construct it manually? Very weird.
 
 ## Links to papers with IGH
 

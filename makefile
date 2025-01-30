@@ -7,7 +7,6 @@ help: ## show this help
 	@printf "───────────────────────────────────────────────────────────────────────\n"
 
 .DEFAULT_GOAL := help
-.PHONY := help 
 
 select_control_studies: src/metafetch/select_control_studies.py
 	python -m metafetch.select_control_studies
@@ -16,8 +15,19 @@ request_data: src/metafetch/request_data.py
 	python -m metafetch.request_data
 
 #	docker run -it -v immcantation-analysis/data:/data:z -v immcantation-analysis/scratch:/scratch:z immcantation-analysis/oasis:/oasis:z immcantation-analysis/software:/software:z immcantation/suite:4.5.0 bash
-start-immcantation:
+start-immcantation: ## starts immcantation container in new shell
+	@mkdir -p $(realpath .)/immcantation-analysis/data
+	@mkdir -p $(realpath .)/immcantation-analysis/scratch
+	@mkdir -p $(realpath .)/immcantation-analysis/oasis
+	@mkdir -p $(realpath .)/immcantation-analysis/software
 	docker run -it -v $(realpath .)/immcantation-analysis/data:/data:z \
 	               -v $(realpath .)/immcantation-analysis/scratch:/scratch:z \
 	               -v $(realpath .)/immcantation-analysis/oasis:/oasis:z \
+	               -v $(realpath .)/immcantation-analysis/software:/software:z \
 				   immcantation/suite:4.5.0 bash
+
+install-immcantation-container-docker: ## installs immcantation docker container
+	docker pull immcantation/suite:4.5.0
+
+
+.PHONY := help  request_data start-immcantation install-immcantation-container-docker
