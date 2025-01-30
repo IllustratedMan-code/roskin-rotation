@@ -1,4 +1,8 @@
+## immcantation
+
 ## methods
+
+The metafetch python package is stored in `src` and can be used to interact with the Ireceptor airr commons api. I do plan to make it usable as a module.
 
 Metadata was downloaded from ireceptor gateway using the "human" and "IGH" filters.
 
