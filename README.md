@@ -41,3 +41,6 @@ The dockerfile itself isn't very helpful. I think they construct it manually? Ve
 - https://pubmed.ncbi.nlm.nih.gov/20161664/ 56
 - https://pubmed.ncbi.nlm.nih.gov/32668194/ 35
 - https://pubmed.ncbi.nlm.nih.gov/28959265/ 25
+
+## nextflow pipeline
+https://nf-co.re/airrflow/4.2.0

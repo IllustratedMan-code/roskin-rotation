@@ -5,3 +5,11 @@
 /*.json
 /*.csv
 /data
+/immcantation-analysis/data
+/*.sif
+**/work/
+immcantation-analysis/software/nextflow/results/
+immcantation-analysis/software/nextflow-hhc/results/
+**/.nextflow/
+**/.nextflow.log*
+**/samplesheet.tsv

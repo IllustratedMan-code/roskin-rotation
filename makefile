@@ -26,8 +26,20 @@ start-immcantation: ## starts immcantation container in new shell
 	               -v $(realpath .)/immcantation-analysis/software:/software:z \
 				   immcantation/suite:4.5.0 bash
 
+start-immcantation-singularity: ## starts immcantation container in new shell
+	@mkdir -p $(realpath .)/immcantation-analysis/data
+	@mkdir -p $(realpath .)/immcantation-analysis/scratch
+	@mkdir -p $(realpath .)/immcantation-analysis/oasis
+	@mkdir -p $(realpath .)/immcantation-analysis/software
+	module load singularity && \
+	singularity shell --no-home -c -B $(realpath .)/immcantation-analysis/data:/data,$(realpath .)/immcantation-analysis/scratch:/scratch,$(realpath .)/immcantation-analysis/oasis:/oasis,$(realpath .)/immcantation-analysis/software:/software,$(realpath .)/immcantation-analysis/makefile:/makefile \
+				   immcantation_suite-4.5.0.sif
 install-immcantation-container-docker: ## installs immcantation docker container
 	docker pull immcantation/suite:4.5.0
+
+install-immcantation-container-singularity:
+	module load singularity && \
+	singularity build immcantation_suite-4.5.0.sif docker://immcantation/suite:4.5.0
 
 
 .PHONY := help  request_data start-immcantation install-immcantation-container-docker

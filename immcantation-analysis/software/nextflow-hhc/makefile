@@ -8,13 +8,39 @@ help: ## show this help
 
 .DEFAULT_GOAL := help
 
-assign-genes: 
-	mkdir -p /software/analysis/results/igblast
-	AssignGenes.py igblast \
-		-s /data/mpaach_controls/subject=mpaach:MP00508.fasta \
-		-b /usr/local/share/igblast \
-		--organism human \
-		--loci ig \
-		--format blast \
-		--outdir results/igblast \
-		--nproc 8
+start-nextflow:
+	source /etc/bashrc && \
+	proxy_on && \
+	module load singularity && \
+	module load nextflow && \
+	nextflow run nf-core/airrflow \
+	-r 4.2.0 \
+	-profile singularity \
+	--input samplesheet.tsv \
+	--mode assembled \
+	--outdir results
+
+resume-nextflow:
+	source /etc/bashrc && \
+	proxy_on && \
+	module load singularity && \
+	module load nextflow && \
+	nextflow run nf-core/airrflow \
+	-r 4.2.0 \
+	-resume \
+	-c nextflow.config \
+	-profile singularity \
+	--input samplesheet.tsv \
+	--mode assembled \
+	--outdir results \
+
+pull-airrflow:
+	source /etc/bashrc && \
+	proxy_on && \
+	module load singularity && \
+	module load nextflow && \
+	nextflow pull nf-core/airrflow \
+	-r 4.2.0
+
+samplesheet.tsv: samplesheet.csv
+	sed -E 's/("([^"]*)")?,/\2\t/g' $< > samplesheet.tsv
