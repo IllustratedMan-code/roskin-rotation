@@ -18,7 +18,8 @@ start-nextflow:
 	-profile singularity \
 	--input samplesheet.tsv \
 	--mode assembled \
-	--outdir results
+	--outdir results \
+	--clonal_threshold 0.05
 
 resume-nextflow:
 	source /etc/bashrc && \
@@ -33,6 +34,7 @@ resume-nextflow:
 	--input samplesheet.tsv \
 	--mode assembled \
 	--outdir results \
+	--clonal_threshold 0.05
 
 pull-airrflow:
 	source /etc/bashrc && \

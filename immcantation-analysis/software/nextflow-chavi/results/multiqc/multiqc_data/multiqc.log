@@ -1,0 +1,8 @@
+[2025-04-21 14:42:53,791] multiqc.config                                     [INFO   ]  Loading config settings from: multiqc_config.yml
+[2025-04-21 14:42:54,148] multiqc.core.version_check                         [WARNING]  MultiQC Version v1.28 now available!
+[2025-04-21 14:42:54,149] multiqc.core.file_search                           [INFO   ]  Search path: /scratch/ros6cc/david/chavi/pipeline_output/work/25/640d753b763d6b8256a441b4c3adc0
+[2025-04-21 14:42:54,226] multiqc.modules.custom_content.custom_content      [WARNING]  HTML plot type found with more than one dataset in nf-core-airrflow-summary
+[2025-04-21 14:42:54,226] multiqc.modules.custom_content.custom_content      [INFO   ]  nf-core-airrflow-summary: Found 1 sample (html)
+[2025-04-21 14:42:54,226] multiqc.modules.custom_content.custom_content      [WARNING]  HTML plot type found with more than one dataset in nf-core-airrflow-methods-description
+[2025-04-21 14:42:54,226] multiqc.modules.custom_content.custom_content      [INFO   ]  nf-core-airrflow-methods-description: Found 1 sample (html)
+[2025-04-21 14:42:54,231] multiqc.core.write_results                         [INFO   ]  Rendering plots. Export plots to formats png, svg, pdf is requested, so it might take a while. To disable plot export, set `export_plots: false` in config, or remove the `--export-plots` command line flag

@@ -1,9 +1,9 @@
 /.direnv
 **/__pycache__/
 /.vscode
-/*.tsv
-/*.json
-/*.csv
+**/*.tsv
+**/*.json
+**/*.csv
 /data
 /immcantation-analysis/data
 /*.sif
@@ -13,3 +13,7 @@ immcantation-analysis/software/nextflow-hhc/results/
 **/.nextflow/
 **/.nextflow.log*
 **/samplesheet.tsv
+**/*.pdf
+**/*.html
+
+**/*.fasta

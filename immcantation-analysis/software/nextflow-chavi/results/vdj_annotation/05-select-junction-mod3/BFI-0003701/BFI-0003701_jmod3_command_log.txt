@@ -1,0 +1,5 @@
+START> FilterJunctionMod3
+FILE> BFI-0003701_productive-T.tsv
+OUTPUT> BFI-0003701_junction-pass.tsv
+PASS> 258559
+FAIL> 1

@@ -1,0 +1,16 @@
+    START> ParseDb
+  COMMAND> split
+     FILE> BFI-0003730_quality-pass.tsv
+    FIELD> productive
+NUM_SPLIT> None
+
+PROGRESS> 11:14:06 |                    |   0% (      0) 0.1 minPROGRESS> 11:14:07 |#                   |   5% ( 14,732) 0.1 minPROGRESS> 11:14:08 |##                  |  10% ( 29,464) 0.2 minPROGRESS> 11:14:09 |###                 |  15% ( 44,196) 0.2 minPROGRESS> 11:14:10 |####                |  20% ( 58,928) 0.2 minPROGRESS> 11:14:11 |#####               |  25% ( 73,660) 0.2 minPROGRESS> 11:14:12 |######              |  30% ( 88,392) 0.2 minPROGRESS> 11:14:13 |#######             |  35% (103,124) 0.2 minPROGRESS> 11:14:14 |########            |  40% (117,856) 0.3 minPROGRESS> 11:14:15 |#########           |  45% (132,588) 0.3 minPROGRESS> 11:14:16 |##########          |  50% (147,320) 0.3 minPROGRESS> 11:14:17 |###########         |  55% (162,052) 0.3 minPROGRESS> 11:14:18 |############        |  60% (176,784) 0.3 minPROGRESS> 11:14:19 |#############       |  65% (191,516) 0.3 minPROGRESS> 11:14:20 |##############      |  70% (206,248) 0.4 minPROGRESS> 11:14:21 |###############     |  75% (220,980) 0.4 minPROGRESS> 11:14:22 |################    |  80% (235,712) 0.4 minPROGRESS> 11:14:23 |#################   |  85% (250,444) 0.4 minPROGRESS> 11:14:24 |##################  |  90% (265,176) 0.4 minPROGRESS> 11:14:25 |################### |  95% (279,908) 0.4 minPROGRESS> 11:14:26 |####################| 100% (294,629) 0.5 min
+
+OUTPUT1> BFI-0003730_productive-T.tsv
+OUTPUT2> BFI-0003730_productive-F.tsv
+RECORDS> 294629
+  PARTS> 2
+  SIZE1> 242687
+  SIZE2> 51942
+    END> ParseDb
+

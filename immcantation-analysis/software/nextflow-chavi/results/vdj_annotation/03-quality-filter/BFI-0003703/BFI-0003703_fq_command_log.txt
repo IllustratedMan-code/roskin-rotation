@@ -1,0 +1,5 @@
+START> FilterQuality
+FILE> BFI-0003703_db-pass.tsv
+OUTPUT> BFI-0003703_quality-pass.tsv
+PASS> 394129
+FAIL> 3721

@@ -10,6 +10,7 @@ help: ## show this help
 
 
 
+output_dir ?= ./outputs ## location of output files
 
 data_dir ?= /data ## location of control fasta files
 
@@ -34,39 +35,40 @@ germ_db ?= /usr/local/share/germlines/imgt/human/vdj
 results ?=/software/analysis/results## results directory
 
 
-assign-genes:   #assigns vdj segments to fasta
-	mkdir -p $(results)/igblast
-	AssignGenes.py igblast \
-		-s $(input) \
-		-b $(db) \
-		--organism human \
-		--loci ig \
-		--format blast \
-		--outdir $(results)/igblast \
-		--nproc 8
-
-standardized-database:
-	mkdir -p $(results)/changeo
-	MakeDb.py igblast \
-		-s $(input) \
-		-i $(results)/igblast/subject=mpaach:MP00508_igblast.fmt7 \
-		--format airr \
-		-r $(germ_db) \
-		--outdir $(results)/changeo \
-		--outname data
-
-only-productive-heavy-chain:
-	ParseDb.py select \
-		-d $(results)/changeo/data_db-pass.tsv \
-		-f productive -u T --outname data_p
-
-	ParseDb.py select \
-		-d $(results)/changeo/data_p_parse-select.tsv \
-		-f v_call -u IGHV --regex --outname data_ph
+# these make targets are if you want to do analysis manually (not nextflow)
+# assign-genes:   #assigns vdj segments to fasta
+# 	mkdir -p $(results)/igblast
+# 	AssignGenes.py igblast \
+# 		-s $(input) \
+# 		-b $(db) \
+# 		--organism human \
+# 		--loci ig \
+# 		--format blast \
+# 		--outdir $(results)/igblast \
+# 		--nproc 8
+# standardized-database:
+# 	mkdir -p $(results)/changeo
+# 	MakeDb.py igblast \
+# 		-s $(input) \
+# 		-i $(results)/igblast/subject=mpaach:MP00508_igblast.fmt7 \
+# 		--format airr \
+# 		-r $(germ_db) \
+# 		--outdir $(results)/changeo \
+# 		--outname data
+# only-productive-heavy-chain:
+# 	ParseDb.py select \
+# 		-d $(results)/changeo/data_db-pass.tsv \
+# 		-f productive -u T --outname data_p
+# 	ParseDb.py select \
+# 		-d $(results)/changeo/data_p_parse-select.tsv \
+# 		-f v_call -u IGHV --regex --outname data_ph
 
 
-clone_mutation_level:
+clone_mutation_level: ## takes nextflow output and aggregates it (mean.median)
 	module load python3 && python software/clone_mutation_level.py " "
+
+plot_mutation_level: ## plots stuff from clone_mutation_level
+	module load python3 && python software/plot_mutation_level.py
 
 
 .PHONY := debug help unzip

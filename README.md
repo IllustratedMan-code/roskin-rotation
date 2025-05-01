@@ -6,7 +6,24 @@ List all available commands
 make help
 ```
 
-## methods
+## Methods
+
+
+### immcantation methods
+
+[detailed instructions here](./docs/immcantation.md)
+
+[more explaination](./immcantation-analysis/README.md)
+
+#### nextflow pipeline
+https://nf-co.re/airrflow/4.2.0
+
+### Papers with IGH
+
+##### Fetching Data
+
+This never really went anywhere, but if you are looking for an example of how to interact
+with the iReceptor API, maybe this would be useful.
 
 The metafetch python package is stored in `src` and can be used to interact with the Ireceptor airr commons api. I do plan to make it usable as a module.
 
@@ -14,16 +31,10 @@ Metadata was downloaded from ireceptor gateway using the "human" and "IGH" filte
 
 `ireceptor-number-of-subjects.py` counts the number of subjects for each experiment and sorts them from largest to smallest.
 
-## immcantation methods
+##### Links (data is available on iReceptor)
 
-[detailed instructions here](./docs/immcantation.md)
-
-Current method for using the immcantation is to use the docker container. I plan on making a functional flake for it as well, but may need to examine the docker image to get full dependency list.
-
-The dockerfile itself isn't very helpful. I think they construct it manually? Very weird.
-
-## Links to papers with IGH
-
+> Note: These subjects do not have available sequences
+> so data is essentially useless (maybe email authors?)
 - https://pubmed.ncbi.nlm.nih.gov/35943978/ 95
 
   - 95 subjects
@@ -42,5 +53,3 @@ The dockerfile itself isn't very helpful. I think they construct it manually? Ve
 - https://pubmed.ncbi.nlm.nih.gov/32668194/ 35
 - https://pubmed.ncbi.nlm.nih.gov/28959265/ 25
 
-## nextflow pipeline
-https://nf-co.re/airrflow/4.2.0
